@@ -1,0 +1,5 @@
+/home/angel/Proyecto_integrador/ProyectoGym/CMakeFiles/GymApp.dir
+/home/angel/Proyecto_integrador/ProyectoGym/CMakeFiles/edit_cache.dir
+/home/angel/Proyecto_integrador/ProyectoGym/CMakeFiles/rebuild_cache.dir
+/home/angel/Proyecto_integrador/ProyectoGym/CMakeFiles/GymApp_autogen_timestamp_deps.dir
+/home/angel/Proyecto_integrador/ProyectoGym/CMakeFiles/GymApp_autogen.dir
