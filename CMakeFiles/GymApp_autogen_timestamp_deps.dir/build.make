@@ -68,9 +68,9 @@ include CMakeFiles/GymApp_autogen_timestamp_deps.dir/progress.make
 
 CMakeFiles/GymApp_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2
 CMakeFiles/GymApp_autogen_timestamp_deps: /usr/lib/qt6/libexec/uic
+CMakeFiles/GymApp_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Sql.so.6.4.2
 CMakeFiles/GymApp_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.4.2
 CMakeFiles/GymApp_autogen_timestamp_deps: /usr/lib/qt6/libexec/moc
-CMakeFiles/GymApp_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Sql.so.6.4.2
 
 GymApp_autogen_timestamp_deps: CMakeFiles/GymApp_autogen_timestamp_deps
 GymApp_autogen_timestamp_deps: CMakeFiles/GymApp_autogen_timestamp_deps.dir/build.make

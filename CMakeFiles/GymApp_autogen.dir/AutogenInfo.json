@@ -184,7 +184,8 @@
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Sql/Qt6SqlTargets.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Sql/Qt6SqlTargets-none.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Sql/Qt6SqlAdditionalTargetInfo.cmake",
-		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Sql/Qt6SqlVersionlessTargets.cmake"
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Sql/Qt6SqlVersionlessTargets.cmake",
+		"/home/angel/Proyecto_integrador/ProyectoGym/gym_app.db"
 	],
 	"CMAKE_SOURCE_DIR" : "/home/angel/Proyecto_integrador/ProyectoGym",
 	"DEP_FILE" : "/home/angel/Proyecto_integrador/ProyectoGym/GymApp_autogen/deps",

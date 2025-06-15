@@ -6,6 +6,7 @@ GymApp_autogen/timestamp: \
 	/home/angel/Proyecto_integrador/ProyectoGym/GymApp_autogen/moc_predefs.h \
 	/home/angel/Proyecto_integrador/ProyectoGym/database.cpp \
 	/home/angel/Proyecto_integrador/ProyectoGym/database.h \
+	/home/angel/Proyecto_integrador/ProyectoGym/gym_app.db \
 	/home/angel/Proyecto_integrador/ProyectoGym/loginwindow.cpp \
 	/home/angel/Proyecto_integrador/ProyectoGym/loginwindow.h \
 	/home/angel/Proyecto_integrador/ProyectoGym/main.cpp \

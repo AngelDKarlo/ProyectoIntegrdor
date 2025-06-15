@@ -80,15 +80,30 @@ void RegisterWindow::setupUI()
     estadoAnimoComboBox->addItems({"Motivado", "Relajado", "Energético", "Determinado", "Tranquilo"});
     formLayout->addWidget(estadoAnimoComboBox, row++, 1);
     
-    // Objetivo
-    formLayout->addWidget(new QLabel("Objetivo:"), row, 0);
+    // Objetivo - ACTUALIZADO con opciones más específicas
+    formLayout->addWidget(new QLabel("Objetivo principal:"), row, 0);
     objetivoComboBox = new QComboBox();
-    objetivoComboBox->addItems({"Ganar músculo", "Perder peso", "Ganar peso", "Mantener estado físico"});
+    objetivoComboBox->addItems({
+        "Ganar músculo",        // Hipertrofia: 5-6 ejercicios, 2 compuestos + 3-4 accesorios
+        "Ganar peso",          // Fuerza: 3-5 ejercicios, 1-2 principales + 2-3 auxiliares  
+        "Perder peso",         // Pérdida de grasa: 4-5 ejercicios + cardio
+        "Mantener estado físico" // Resistencia: 4-6 ejercicios, 1 por grupo muscular
+    });
+    
+    // Agregar tooltips para explicar cada objetivo
+    objetivoComboBox->setToolTip(
+        "• Ganar músculo: Rutinas de hipertrofia con mayor volumen\n"
+        "• Ganar peso: Rutinas de fuerza con ejercicios básicos\n"
+        "• Perder peso: Combinación de pesas y cardio\n"
+        "• Mantener estado físico: Rutinas balanceadas de resistencia"
+    );
+    
     formLayout->addWidget(objetivoComboBox, row++, 1);
     
     // Mascotas
     formLayout->addWidget(new QLabel("¿Tienes mascotas?"), row, 0);
     mascotasCheckBox = new QCheckBox("Sí, tengo mascotas");
+    mascotasCheckBox->setToolTip("Las rutinas incluirán sugerencias para actividades con mascotas en días de descanso");
     formLayout->addWidget(mascotasCheckBox, row++, 1);
     
     // Contraseña
@@ -105,6 +120,17 @@ void RegisterWindow::setupUI()
     confirmarPasswordEdit->setPlaceholderText("Repite la contraseña");
     formLayout->addWidget(confirmarPasswordEdit, row++, 1);
     
+    // Info adicional sobre los objetivos
+    QLabel *infoLabel = new QLabel(
+        "<b>Información sobre objetivos:</b><br>"
+        "🏋️ <b>Ganar músculo:</b> Rutinas de hipertrofia, 5-6 ejercicios por día<br>"
+        "💪 <b>Ganar peso:</b> Rutinas de fuerza, ejercicios básicos pesados<br>"
+        "🔥 <b>Perder peso:</b> Combinación pesas + cardio, formato circuito<br>"
+        "⚖️ <b>Mantener estado:</b> Rutinas balanceadas, todos los grupos musculares"
+    );
+    infoLabel->setWordWrap(true);
+    infoLabel->setStyleSheet("background-color: #f0f8ff; padding: 10px; border-radius: 5px; font-size: 11px;");
+    
     // Botones
     QHBoxLayout *buttonLayout = new QHBoxLayout();
     registrarButton = new QPushButton("Registrarse");
@@ -119,6 +145,7 @@ void RegisterWindow::setupUI()
     // Agregar todo al layout principal
     mainLayout->addWidget(titleLabel);
     mainLayout->addLayout(formLayout);
+    mainLayout->addWidget(infoLabel);
     mainLayout->addLayout(buttonLayout);
     mainLayout->addStretch();
     
@@ -167,7 +194,14 @@ void RegisterWindow::registrarUsuario()
     
     // Intentar registrar
     if (Database::instance().registrarUsuario(usuario)) {
-        QMessageBox::information(this, "Éxito", "Usuario registrado correctamente.\n¡Ahora puedes iniciar sesión!");
+        QString mensaje = QString(
+            "¡Usuario registrado correctamente!\n\n"
+            "Tu rutina será optimizada para: %1\n"
+            "Nivel: %2\n\n"
+            "¡Ahora puedes iniciar sesión!"
+        ).arg(usuario.objetivo).arg(usuario.nivelGimnasio);
+        
+        QMessageBox::information(this, "¡Bienvenido al Gym!", mensaje);
         limpiarCampos();
         emit mostrarLogin();
     } else {
